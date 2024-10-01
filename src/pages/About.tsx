@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 
-import colors from 'web-check-live/styles/colors';
+import colors from '../styles/colors';
 import Heading from 'web-check-live/components/Form/Heading';
 import Footer from 'web-check-live/components/misc/Footer';
 import Nav from 'web-check-live/components/Form/Nav';
 import Button from 'web-check-live/components/Form/Button';
 import AdditionalResources from 'web-check-live/components/misc/AdditionalResources';
-import { StyledCard } from 'web-check-live/components/Form/Card';
-import docs, { about, featureIntro, license, fairUse, supportUs } from 'web-check-live/utils/docs';
 
 const AboutContainer = styled.div`
 width: 95vw;
