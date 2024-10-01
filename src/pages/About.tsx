@@ -221,7 +221,7 @@ const About = (): JSX.Element => {
         <hr />
                 <Heading as="h3" size="small" color={colors.primary}>Fair Use</Heading>
         <ul>
-          {fairUse.map((para, index: number) => (
+          {fairUse.map((para index: number) => (
             <li key={index}>{para}</li>  {/* Added key to fix possible missing key warning */}
           ))}
         </ul>
