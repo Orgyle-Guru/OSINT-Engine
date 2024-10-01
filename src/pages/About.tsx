@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
-import colors from 'styles/colors';
-import Heading from 'components/Form/Heading';
-import Footer from 'components/misc/Footer';
-import Nav from 'components/Form/Nav';
-import Button from 'components/Form/Button';
-import AdditionalResources from 'components/misc/AdditionalResources';
-import { StyledCard } from 'components/Form/Card';
-import docs, { about, featureIntro, license, fairUse, supportUs } from 'utils/docs';
+import colors from 'web-check-live/styles/colors';
+import Heading from 'web-check-live/components/Form/Heading';
+import Footer from 'web-check-live/components/misc/Footer';
+import Nav from 'web-check-live/components/Form/Nav';
+import Button from 'web-check-live/components/Form/Button';
+import AdditionalResources from 'web-check-live/components/misc/AdditionalResources';
+import { StyledCard } from 'web-check-live/components/Form/Card';
+import docs, { about, featureIntro, license, fairUse, supportUs } from 'web-check-live/utils/docs';
 
 const AboutContainer = styled.div`
 width: 95vw;
@@ -123,7 +123,7 @@ const About = (): JSX.Element => {
     <AboutContainer>
       <Nav>
         <HeaderLinkContainer>
-          <a target="_blank" rel="noreferrer" href="https://https://github.com/Orgyle-Guru/OSINT-Engine"><Button>View on GitHub</Button></a>
+          <a target="_blank" rel="noreferrer"https://github.com/Orgyle-Guru/OSINT-Engine"><Button>View on GitHub</Button></a>
         </HeaderLinkContainer>
       </Nav>
 
@@ -154,7 +154,7 @@ const About = (): JSX.Element => {
         </SponsorshipContainer>
         <hr />
         <p>
-          It's licensed under the <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine">MIT license</a>,
+          This is licensed under the <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine/blob/master/LICENSE">MIT license</a>,
           and is completely free to use, modify and distribute in both personal and commercial settings.<br />
           Source code and self-hosting docs are available on <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine">GitHub</a>.
         </p>
@@ -167,7 +167,7 @@ const About = (): JSX.Element => {
         <Heading as="h3" size="small" id="#feature-contents" color={colors.primary}>Contents</Heading>
           <ul>
             {docs.map((section, index: number) => (
-              <li>
+              <li key={index}>
                 <b>{index + 1}</b>
                 <a href={`#${makeAnchor(section.title)}`}>{section.title}</a></li>
             ))}
@@ -197,9 +197,9 @@ const About = (): JSX.Element => {
               <ul>
                 {section.resources.map((link: string | { title: string, link: string }, linkIndx: number) => (
                   typeof link === 'string' ? (
-                    <li id={`link-${linkIndx}`}><a target="_blank" rel="noreferrer" href={link}>{link}</a></li>
+                    <li key={`link-${linkIndx}`} id={`link-${linkIndx}`}><a target="_blank" rel="noreferrer" href={link}>{link}</a></li>
                   ) : (
-                    <li id={`link-${linkIndx}`}><a target="_blank" rel="noreferrer" href={link.link}>{link.title}</a></li>
+                    <li key={`link-${linkIndx}`} id={`link-${linkIndx}`}><a target="_blank" rel="noreferrer" href={link.link}>{link.title}</a></li>
                   )
                 ))}
               </ul>
@@ -207,28 +207,13 @@ const About = (): JSX.Element => {
           </section>
         ))}
       </Section>
-     
-   <AboutContainer>
-      <Heading as="h2" size="medium" color={colors.primary}>API Documentation</Heading>
-      <Section>
-        {/* eslint-disable-next-line*/}
-        <p>// Coming soon...</p>
-      </Section>
-
-      <Heading as="h2" size="medium" color={colors.primary}>Additional Resources</Heading>
-      <AdditionalResources />
-
-      <Heading as="h2" size="medium" color={colors.primary}>Support Us</Heading>
-      <Section>
-        {supportUs.map((para, index: number) => (<p dangerouslySetInnerHTML={{__html: para}} />))}
-      </Section>
 
       <Heading as="h2" size="medium" color={colors.primary}>Terms & Info</Heading>
       <Section>
       <Heading as="h3" size="small" color={colors.primary}>License</Heading>
         <b>
-          <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine">Web-Check</a> is distributed under the MIT license,
-          © <a target="_blank" rel="noreferrer" </a> { new Date().getFullYear()}
+          <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine">OSINT-Engine</a> is distributed under the MIT license,
+          © <a target="_blank" rel="noreferrer" href="https://orgyle.com">James Crabb</a> { new Date().getFullYear()}
         </b>
         <br />
         <small>For more info, see <a target="_blank" rel="noreferrer" href="https://tldrlegal.com/license/mit-license">TLDR Legal → MIT</a></small>
