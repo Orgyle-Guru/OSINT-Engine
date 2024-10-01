@@ -209,7 +209,6 @@ const About = (): JSX.Element => {
       </Section>
      
    <AboutContainer>
-    </Section>
       <Heading as="h2" size="medium" color={colors.primary}>API Documentation</Heading>
       <Section>
         {/* eslint-disable-next-line*/}
