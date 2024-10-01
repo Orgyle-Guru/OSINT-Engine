@@ -123,7 +123,7 @@ const About = (): JSX.Element => {
     <AboutContainer>
       <Nav>
         <HeaderLinkContainer>
-          <a target="_blank" rel="noreferrer"https://github.com/Orgyle-Guru/OSINT-Engine"><Button>View on GitHub</Button></a>
+          <a target="_blank" rel="noreferrer" href="https://github.com/Orgyle-Guru/OSINT-Engine"><Button>View on GitHub</Button></a> {/* Corrected this line */}
         </HeaderLinkContainer>
       </Nav>
 
@@ -219,19 +219,21 @@ const About = (): JSX.Element => {
         <small>For more info, see <a target="_blank" rel="noreferrer" href="https://tldrlegal.com/license/mit-license">TLDR Legal → MIT</a></small>
         <pre>{license}</pre>
         <hr />
-        <Heading as="h3" size="small" color={colors.primary}>Fair Use</Heading>
+                <Heading as="h3" size="small" color={colors.primary}>Fair Use</Heading>
         <ul>
-          {fairUse.map((para, index: number) => (<li>{para}</li>))}
+          {fairUse.map((para, index: number) => (
+            <li key={index}>{para}</li>  {/* Added key to fix possible missing key warning */}
+          ))}
         </ul>
         <hr />
         <Heading as="h3" size="small" color={colors.primary}>Privacy</Heading>
         <p>
-        Analytics are used on the demo instance (via a self-hosted Plausible instance), this only records the URL you visited but no personal data.
-        There's also some basic error logging (via a self-hosted GlitchTip instance), this is only used to help me fix bugs.
-        <br />
-        <br />
-        Neither your IP address, browser/OS/hardware info, nor any other data will ever be collected or logged.
-        (You may verify this yourself, either by inspecting the source code or the using developer tools)
+          Analytics are used on the demo instance (via a self-hosted Plausible instance), this only records the URL you visited but no personal data.
+          There's also some basic error logging (via a self-hosted GlitchTip instance), this is only used to help me fix bugs.
+          <br />
+          <br />
+          Neither your IP address, browser/OS/hardware info, nor any other data will ever be collected or logged.
+          (You may verify this yourself, either by inspecting the source code or using developer tools)
         </p>
       </Section>
     </AboutContainer>
