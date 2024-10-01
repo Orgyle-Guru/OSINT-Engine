@@ -220,11 +220,11 @@ const About = (): JSX.Element => {
         <pre>{license}</pre>
         <hr />
                 <Heading as="h3" size="small" color={colors.primary}>Fair Use</Heading>
-        <ul>
-          {fairUse.map((para index: number) => (
-            <li key={index}>{para}</li>  {/* Added key to fix possible missing key warning */}
-          ))}
-        </ul>
+      <ul>
+  {fairUse.map((para, index) => (
+    <li key={index}>{para}</li>
+  ))}
+</ul>
         <hr />
         <Heading as="h3" size="small" color={colors.primary}>Privacy</Heading>
         <p>
