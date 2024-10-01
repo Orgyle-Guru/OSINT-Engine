@@ -1,7 +1,7 @@
 
 const keys = {
-  shodan: process.env.OpviH8vLrphLvVam0tBva6A1v4IzlJ4X,
-  whoApi: process.env.af5fb9866aa48495ec6a3620cced1b4d,
+  shodan: process.env.REACT_APP_SHODAN_API_KEY,
+  whoApi: process.env.REACT_APP_WHO_API_KEY,
 };
 
 export default keys;
